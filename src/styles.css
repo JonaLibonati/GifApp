@@ -1,0 +1,142 @@
+:root {
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+#root {
+  padding: 7px;
+}
+
+.app_name{
+  padding: 35px 10px;
+  margin: 0;
+  background-color: rgb(59,59,59); 
+}
+
+.app_input {
+  width: 100%;
+  margin-top: 7px;
+  padding: 10px;
+  border: 0;
+}
+
+.grid_container {
+  display: grid;
+  gap: 7px;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  justify-content: center;
+  padding: 7px 0px 0px;
+}
+
+.grid_title {
+  position:relative;
+  width: 100%;
+  height: 300px;
+  color: #242424;
+  background-color: rgba(255, 255, 255, 0.95); 
+}
+
+.grid_title_text {
+  width: 25%;
+  height: 300px;
+  font-size: 30px;
+  line-height: 30px;
+  padding-left: 10px;
+  padding-top: 10px;
+}
+
+.grid_item {
+  position:relative;
+  margin: 0;
+  height: 100%;
+}
+
+.item_img {
+  display: block;
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.item_title {
+  position: absolute;
+  top: 0;
+  padding: 10px;
+  width: 100%;
+  color: #242424;
+  background-color: rgba(255, 255, 255, 0.87); 
+}
+
+.button {
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  margin: 10px;
+  bottom: 0;
+  right: 0;
+}

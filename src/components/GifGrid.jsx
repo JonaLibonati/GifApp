@@ -1,0 +1,31 @@
+import React from 'react'
+import { useEffect, useState } from 'react'
+import { getGifs } from '../helpers/getGifs'
+import { GifCard } from '../components/GifCard'
+import { CloseButton } from '../components/CloseButton'
+
+export const GifGrid = ({category, setCategories}) => {
+
+    const [gifs, setGifs] = useState([])
+
+    const getData = async () => {
+        setGifs(await getGifs(category));
+    }
+
+    useEffect(() => {
+        getData().catch(console.error)
+    }, []);
+    
+    return (
+    <>
+        <div className = 'grid_container'>  
+            <div className = 'grid_item grid_title'>
+                <h2 className = 'grid_title_text'>{category}</h2>
+                <CloseButton category = {category} setCategories = {setCategories} />
+            </div>  
+            {gifs.map((gif) => <GifCard key = {gif.id} {...gif} />)}
+            {/* iqual to {gifs.map((gif) => <GifCard key = {gif.id} title = {gif.title} url = {gif.url} />)} */}
+        </div>
+    </>
+    )
+}
