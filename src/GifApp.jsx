@@ -10,15 +10,18 @@ export const GitApp = () => {
   return (
     <>
       {/* Title */}
-        <h1 className = 'app_name'>GifApp</h1>
+      <h1 className = 'app_name'>GifApp</h1>
       {/* input */}
-        <CategoryInput 
-          type={'text'} 
+      <div className='app_input_container'>
+        <CategoryInput
+          type={'text'}
           id={'gif-category'}
           name={'gif-category'}
           placeholder={'Which gif do you want?'}
           setCategories = {setCategories}
         />
+        <div className='app_clean' onClick={() => setCategories([])}>Clean All</div>
+      </div>
       {/* gif list */}
       <div>
         {categories.map((category) => <GifGrid category = {category} setCategories = {setCategories} key = {category}/>)}

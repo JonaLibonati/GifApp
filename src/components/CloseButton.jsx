@@ -15,7 +15,7 @@ export const CloseButton = ({category, setCategories}) => {
 			return new_cat;
 		});
 	}
-	
+
   return (
     <div className = 'button' onClick={handlebutton}>
 			<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">

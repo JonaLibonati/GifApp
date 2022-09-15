@@ -19,22 +19,22 @@ export const CategoryInput = ({type, name, id, placeholder, setCategories}) => {
         setValue('');
 
         setCategories((categories) => {
-            if (!categories.includes(trimed_value)) { 
+            if (!categories.includes(trimed_value)) {
                 return [trimed_value, ...categories]
             } else {
                 return [...categories]
             }
         });
     }
- 
+
     return (
         <form onSubmit = {handleSubmit}>
             <label htmlFor = {id}>
-                <input 
+                <input
                     id = {id}
                     type = {type}
                     name = {name}
-                    placeholder = {placeholder} 
+                    placeholder = {placeholder}
                     value = {value}
                     onChange={handleValue}
                     className = 'app_input'
