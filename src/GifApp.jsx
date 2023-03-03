@@ -3,16 +3,16 @@ import { useState } from 'react'
 import { CategoryInput } from './components/CategoryInput'
 import { GifGrid } from './components/GifGrid'
 
-export const GitApp = () => {
+export const GifApp = () => {
 
   const [categories, setCategories] = useState(['cats'])
 
   return (
     <>
       {/* Title */}
-      <h1 className = 'app_name'>GifApp</h1>
+      <h1 data-testid = "heading_h1" className = 'app_name'>GifApp</h1>
       {/* input */}
-      <div className='app_input_container'>
+      <div className = 'app_input_container'>
         <CategoryInput
           type={'text'}
           id={'gif-category'}
@@ -20,7 +20,7 @@ export const GitApp = () => {
           placeholder={'Which gif do you want?'}
           setCategories = {setCategories}
         />
-        <div className='app_clean' onClick={() => setCategories([])}>Clean All</div>
+        <div data-testid = "clean_all_button" className = 'app_clean' onClick={() => setCategories([])}>Clean All</div>
       </div>
       {/* gif list */}
       <div>

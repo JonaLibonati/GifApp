@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
+import PropTypes from 'prop-types'
 
 export const CategoryInput = ({type, name, id, placeholder, setCategories}) => {
 
@@ -14,9 +15,9 @@ export const CategoryInput = ({type, name, id, placeholder, setCategories}) => {
 
         const trimed_value = value.trim().toLowerCase();
 
-        if (trimed_value < 1) return;
-
         setValue('');
+
+        if (trimed_value < 1) return;
 
         setCategories((categories) => {
             if (!categories.includes(trimed_value)) {
@@ -28,7 +29,7 @@ export const CategoryInput = ({type, name, id, placeholder, setCategories}) => {
     }
 
     return (
-        <form onSubmit = {handleSubmit}>
+        <form onSubmit = {handleSubmit} aria-label='form'>
             <label htmlFor = {id}>
                 <input
                     id = {id}
@@ -42,4 +43,12 @@ export const CategoryInput = ({type, name, id, placeholder, setCategories}) => {
             </label>
         </form>
     );
+}
+
+CategoryInput.propTypes = {
+    id: PropTypes.string.isRequired,
+    type: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    placeholder: PropTypes.string.isRequired,
+    setCategories: PropTypes.func.isRequired,
 }

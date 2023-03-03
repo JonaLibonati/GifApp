@@ -1,18 +1,19 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { GifCard } from '../components/GifCard'
 import { useFetchGif } from '../hooks/useFetchGif'
 import { CloseButton } from '../components/CloseButton'
 
 export const GifGrid = ({category, setCategories}) => {
 
-    const [gifs, loading] = useFetchGif(category)
+    const {gifs, loading} = useFetchGif(category);
 
     return (
     <>
         {
-        loading ? <h2 className = 'loading'>loading...</h2> :
+        loading ? <h2 data-testid = 'loading' className = 'loading'>loading...</h2> :
 
-        <div className = 'grid_container'>
+        <div data-testid = 'GifGrid' className = 'grid_container'>
             <div className = 'grid_item grid_title'>
                 <h2 className = 'grid_title_text'>{category}</h2>
                 <CloseButton category = {category} setCategories = {setCategories} />
@@ -24,3 +25,8 @@ export const GifGrid = ({category, setCategories}) => {
     </>
     )
 }
+
+GifGrid.propTypes = {
+    category: PropTypes.string.isRequired,
+    setCategories: PropTypes.func.isRequired
+  }

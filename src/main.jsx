@@ -1,11 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { GitApp } from './GifApp'
+import { GifApp } from './GifApp'
 import './normalize.css'
 import './styles.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <GitApp />
+    <GifApp />
   </React.StrictMode>
 )
